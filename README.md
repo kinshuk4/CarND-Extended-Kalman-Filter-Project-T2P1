@@ -204,7 +204,7 @@ The files you need to work with are in the `src` folder of the github repository
 - `main.cpp` - communicates with the Term 2 Simulator receiving data measurements, calls a function to run the Kalman filter, calls a function to calculate RMSE
 - `FusionEKF.cpp` - initializes the filter, calls the predict function, calls the update function
 - `kalman_filter.cpp`- defines the predict function, the update function for lidar, and the update function for radar
-- `tools.cpp`- function to calculate RMSE and the Jacobian matrix
+- `tools.cpp`- function to calculate RMSE and the [Jacobian matrix](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/0949fca6-b379-42af-a919-ee50aa304e6a/lessons/3612b91d-9c33-47ad-8067-a572a6c93837/concepts/ad446f45-d757-41b0-be5d-3f0a28d3dfd1)
 
 The only files you need to modify are `FusionEKF.cpp`, `kalman_filter.cpp`, and `tools.cpp`.
 
