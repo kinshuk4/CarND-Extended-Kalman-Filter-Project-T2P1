@@ -30,6 +30,8 @@ public:
     * Kalman Filter update and prediction math lives in here.
     */
     KalmanFilter ekf_;
+    static const float noise_ax;
+    static const float noise_ay;
 
 private:
     // check whether the tracking toolbox was initialized or not (first measurement)

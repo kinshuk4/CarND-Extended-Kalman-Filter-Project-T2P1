@@ -8,6 +8,9 @@ using Eigen::MatrixXd;
 using Eigen::VectorXd;
 using std::vector;
 
+// set the acceleration of noise component
+const float FusionEKF::noise_ax = 9;
+const float FusionEKF::noise_ay = 9;
 /*
  * Constructor.
  */
@@ -50,6 +53,7 @@ FusionEKF::FusionEKF() {
             0, 1, 0, 0,
             0, 0, 1000, 0,
             0, 0, 0, 1000;
+
 }
 
 /**
@@ -143,9 +147,6 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
             dt, 0,
             0, dt;
 
-    // set the acceleration of noise component
-    float noise_ax = 9;
-    float noise_ay = 9;
 
     //set the process covariance matrix Q
     MatrixXd sigma(2, 2);
