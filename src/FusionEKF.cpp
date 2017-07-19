@@ -11,6 +11,7 @@ using std::vector;
 // set the acceleration of noise component
 const float FusionEKF::noise_ax = 9;
 const float FusionEKF::noise_ay = 9;
+
 /*
  * Constructor.
  */
@@ -157,7 +158,9 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
     ekf_.Q_ = G * sigma * G.transpose();
 
 
-    ekf_.Predict();
+    if (dt > 0.001) {
+        ekf_.Predict();
+    }
 
     /*****************************************************************************
      *  Update
